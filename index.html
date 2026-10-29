@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Software Studio: responsive, beautiful mobile apps and websites</title>
+  <meta name="description" content="We design, build, and host your mobile apps and websites for you.">
+  <meta property="og:title" content="Software Studio">
+  <meta property="og:description" content="We design, build, and host your mobile apps and websites for you.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="#top">software<b>.studio</b></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <nav class="nav" id="nav-links" aria-label="Main">
+        <a href="#case-studies">Case studies</a>
+        <a href="#process">Process</a>
+        <a class="btn" href="#contact">Start a project</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="top">
+      <h1>we design, build, and host your mobile apps and websites for you.</h1>
+      <div class="cta-row">
+        <a class="btn" href="#contact">Start a project</a>
+        <a class="btn ghost" href="#case-studies">See case studies</a>
+      </div>
+      <p class="strip">Mobile apps &middot; Web apps &middot; Publishing, hosting &amp; evolution</p>
+    </section>
+
+    <section class="wrap section" id="case-studies">
+      <h2>Case studies</h2>
+      <p class="lead">Proof beats promises.</p>
+      <!-- Reserved: 3 case-study cards (screenshot 4:3, project name, one-line outcome) to be added -->
+      <div class="empty">
+        Real case studies will live here &mdash; screenshots, project name, one-line outcome.
+        Cards for 3 projects are reserved in this row.
+      </div>
+    </section>
+
+    <section class="wrap section" id="process">
+      <h2 class="sr-only">How it works</h2>
+      <p class="process-intro">From first call to launch, here's the whole journey. Plus, we'll host and evolve it for you.</p>
+      <div class="process-grid">
+        <article class="card reveal">
+          <span class="n">1</span>
+          <h3>Discover</h3>
+          <p>Tell us what you want to build. One 30-minute call is all it takes.</p>
+        </article>
+        <article class="card reveal">
+          <span class="n">2</span>
+          <h3>Design</h3>
+          <p>You approve real screens before we write a line of code.</p>
+        </article>
+        <article class="card reveal">
+          <span class="n">3</span>
+          <h3>Build</h3>
+          <p>You test working prototypes as we ship each part of your mobile app or website.</p>
+        </article>
+        <article class="card reveal">
+          <span class="n">4</span>
+          <h3>Host</h3>
+          <p>We publish your Android apps to the Google Play Store, and your iOS apps to the App Store. We also host your websites.</p>
+        </article>
+        <article class="card reveal">
+          <span class="n">5</span>
+          <h3>Evolve</h3>
+          <p>We'll update your mobile apps and websites when you need us to.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="contact">
+      <h2>Tell us what you're building.</h2>
+      <form id="project-form" novalidate>
+        <div class="grid">
+          <div>
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+          </div>
+          <div>
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="jane@company.com">
+          </div>
+          <div>
+            <label for="f-build">What do you want to build?</label>
+            <input id="f-build" name="build" type="text" required placeholder="A delivery app for my customers">
+          </div>
+          <div class="placeholder__f_235 { display: none; }">
+            <label for="f-budget">Budget</label>
+            <select id="f-budget" name="budget">
+              <option>Under $1,000</option>
+              <option selected>$1,000 - $5,000</option>
+              <option>$5,000+</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn" type="submit">Send it &rarr;</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+      <p class="alt-contact">Prefer email? <a href="mailto:hello@software.studio">hello@software.studio</a></p>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <span>&copy; <span id="year">2026</span> software.studio</span>
+    <span class="tagline">Software Studio: responsive, beautiful mobile apps and websites</span>
+    <a href="mailto:hello@software.studio">hello@software.studio</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
