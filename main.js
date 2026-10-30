@@ -45,29 +45,53 @@
   var year = document.getElementById('year');
   if (year) { year.textContent = String(new Date().getFullYear()); }
 
-  // Contact form -> mailto handoff
-  // Interim receiver until a hosted form backend (Web3Forms / Netlify Forms) is chosen.
+  // Contact form -> Web3Forms receiver
   var form = document.getElementById('project-form');
   var note = document.getElementById('form-note');
 
   if (form && note) {
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var btnLabel = submitBtn ? submitBtn.textContent : '';
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
       if (!form.reportValidity()) { return; }
 
-      var data = new FormData(form);
-      var body =
-        'Name: ' + data.get('name') + '\n' +
-        'Email: ' + data.get('email') + '\n' +
-        'Wants to build: ' + data.get('build') + '\n' +
-        'Budget: ' + data.get('budget');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+      }
+      note.textContent = '';
 
-      var subject = 'Project inquiry from ' + data.get('name');
-      note.textContent = 'Opening your email app...';
-      window.location.href =
-        'mailto:hello@software.studio?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function (res) { return res.json(); })
+        .then(function (result) {
+          if (res_ok(result)) {
+            note.textContent = '';
+            form.innerHTML =
+              '<p class="form-success">Thanks! Your request is on its way - we\'ll reply within one business day.</p>';
+          } else {
+            fail(result);
+          }
+        })
+        .catch(function () {
+          fail(null);
+        });
+
+      function res_ok(result) {
+        return result && result.success === true;
+      }
+
+      function fail(result) {
+        note.textContent =
+          (result && result.message) ||
+          'Something went wrong. Please email hello@software.studio instead.';
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = btnLabel;
+        }
+      }
     });
   }
 })();

@@ -244,13 +244,16 @@ input, select {
 }
 input:focus, select:focus { border-color: var(--accent); }
 
-.form-note {
+.form-note,
+.form-success {
   font-family: system-ui, sans-serif;
   font-size: 14px;
   color: var(--accent);
   margin: 10px 0 0;
   min-height: 20px;
 }
+
+.form-success { color: var(--ink); }
 
 .alt-contact {
   font-family: system-ui, sans-serif;

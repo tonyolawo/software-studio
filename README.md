@@ -16,7 +16,7 @@ assets/         favicon
 
 ## Known interim choices
 - Placeholders removed on purpose: case studies row is an empty reserved slot; real client work to be added.
-- Contact form composes a `mailto:` draft (no backend yet). Swap to Web3Forms / Netlify Forms when the receiver decision is made.
+- Contact form submits to Web3Forms (client-side fetch); access key is the public-by-design embed from the `WEB3FORMS_ACCESS_KEY` env var.
 - `software.studio` wordmark and `hello@software.studio` email are placeholders pending final brand + domain.
 
 ## Local preview

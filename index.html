@@ -84,7 +84,12 @@
 
     <section class="wrap section" id="contact">
       <h2>Tell us what you're building.</h2>
-      <form id="project-form" novalidate>
+      <form id="project-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <!-- access key is public-by-design (Web3Forms embeds it client-side); source of truth: WEB3FORMS_ACCESS_KEY env var -->
+        <input type="hidden" name="access_key" value="d4eaf735-8a8e-40a6-8c89-3a3f140a51b0">
+        <input type="hidden" name="subject" value="Project inquiry - software.studio">
+        <input type="hidden" name="from_name" value="software.studio">
+        <input type="checkbox" name="botcheck" style="display: none;" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="grid">
           <div>
             <label for="f-name">Name</label>
